@@ -1,4 +1,4 @@
-package com.tree.traversal;
+package com.tree;
 
 public class Node {
 	private int value;

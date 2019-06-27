@@ -1,5 +1,7 @@
 package com.tree.traversal;
 
+import com.tree.Node;
+
 /**
  * Left Right Root
  * 

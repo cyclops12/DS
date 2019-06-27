@@ -1,5 +1,7 @@
 package com.tree.traversal;
 
+import com.tree.Node;
+
 public class Traversal {
 
 	public static void main(String[] args) {
