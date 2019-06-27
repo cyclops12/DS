@@ -14,7 +14,7 @@ public class Traversal {
 		PostOrder.traverse(tree);
 	}
 
-	private static Node constructTree() {
+	public static Node constructTree() {
 
 		Node root = new Node(1);
 		root.setLeft(new Node(2));
