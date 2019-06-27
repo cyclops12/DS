@@ -1,19 +1,20 @@
 package com.tree.traversal;
 
 /**
- * Left Root Right
+ * Root left Right
+ * 
  * @author Ratan
  *
  */
-public class Inorder {
-	
+public class PreOrder {
+
 	public static void traverse(Node node) {
-		if(node == null) {
+		if (node == null) {
 			return;
 		}
-		traverse(node.getLeft());
 		System.out.println(node.getValue());
+		traverse(node.getLeft());
 		traverse(node.getRight());
-	}
 
+	}
 }
