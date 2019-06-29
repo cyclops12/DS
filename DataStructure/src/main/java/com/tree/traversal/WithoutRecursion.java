@@ -48,26 +48,29 @@ public class WithoutRecursion {
 
 	}
 
+	/**
+	 * Using 2 stack method
+	 * 
+	 * go Root right left  iteratively and put it in a stack--->print stack
+	 * 
+	 * @param tree
+	 */
 	private static void postOrderTraverse(Node tree) {
-		Stack<Node> stack = new Stack<>();
-		Node curr = tree;
+		Stack<Node> stack1 = new Stack<>();
+		Stack<Node> stack2 = new Stack<>();
+		stack1.push(tree);
+		while (!stack1.isEmpty()) {
 
-		while (curr != null || !stack.isEmpty()) {
-
-			if (curr != null) {
-
-				stack.push(curr);
-				curr = curr.getLeft();
-			} else {
-				curr = stack.peek();
-				if (curr.getRight() != null) {
-					curr = curr.getRight();
-				} else {
-					curr = stack.pop();
-					System.out.println(curr.getValue());
-					//curr = curr.getRight();
-				}
+			Node node = stack1.pop();
+			if (node != null) {
+				stack2.push(node);
+				stack1.push(node.getLeft());
+				stack1.push(node.getRight());
 			}
+		}
+		
+		while(!stack2.isEmpty()) {
+			System.out.println(stack2.pop());
 		}
 
 	}
